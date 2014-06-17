@@ -1,0 +1,295 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ca.sulli.summerscavenge.MainActivity"
+    android:background="#e3ffe0">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/abc_ab_bottom_solid_light_holo"
+                android:id="@+id/HeaderRelative">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="false"
+                    android:id="@+id/PlayerBoxRelative"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Team Name"
+                        android:id="@+id/textView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Team Score: "
+                        android:id="@+id/textView2"
+                        android:layout_below="@+id/textView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Your Score: "
+                        android:id="@+id/textView3"
+                        android:layout_below="@+id/textView2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Top Team (18)"
+                        android:id="@+id/textView5"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Team Name"
+                        android:id="@+id/textView4"
+                        android:layout_below="@+id/textView5"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/ScoreBoxRelative">
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ClueBoxRelative"
+                android:layout_alignParentRight="false"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_below="@+id/HeaderRelative"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Your Clues..."
+                    android:id="@+id/textView6"
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="false"
+                    android:textSize="24dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="#aea7d3"
+                    android:id="@+id/Clue1Relative"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/textView6"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="#42"
+                        android:id="@+id/clue1NumText"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true" />
+
+                    <Button
+                        android:layout_width="128dp"
+                        android:layout_height="32dp"
+                        android:text="!"
+                        android:id="@+id/Clue1Gold"
+                        android:layout_marginLeft="72dp"
+                        android:background="#ffc71c"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentLeft="false"
+                        android:onClick="ClueButtonPress" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="#aea7d3"
+                    android:id="@+id/Clue2Relative"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/Clue1Relative"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="#31"
+                        android:id="@+id/clue2NumText"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true" />
+
+                    <Button
+                        android:layout_width="128dp"
+                        android:layout_height="32dp"
+                        android:text="!"
+                        android:id="@+id/Clue2Gold"
+                        android:layout_marginLeft="72dp"
+                        android:background="#ffc71c"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentLeft="false"
+                        android:onClick="ClueButtonPress"
+                        android:layout_alignWithParentIfMissing="false" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:background="#aea7d3"
+                    android:id="@+id/Clue3Relative"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/Clue2Relative"
+                    android:gravity="center_vertical|left"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="#9"
+                        android:id="@+id/clue3NumText"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="false" />
+
+                    <Button
+                        android:layout_width="128dp"
+                        android:layout_height="32dp"
+                        android:text="!"
+                        android:id="@+id/Clue3Gold"
+                        android:layout_marginLeft="72dp"
+                        android:background="#ffc71c"
+                        android:onClick="ClueButtonPress"
+                        android:layout_alignParentRight="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentLeft="false"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Found a Code?"
+                android:id="@+id/textView10"
+                android:layout_below="@+id/ClueBoxRelative"
+                android:layout_alignLeft="@+id/ClueBoxRelative"
+                android:layout_alignStart="@+id/ClueBoxRelative"
+                android:layout_marginTop="15dp"
+                android:textSize="24dp" />
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:id="@+id/scanButton"
+                android:layout_below="@+id/textView10"
+                android:layout_alignLeft="@+id/textView10"
+                android:layout_alignStart="@+id/textView10"
+                android:src="@drawable/sulli_small_qr"
+                android:scaleType="fitCenter"
+                />
+
+            <Button
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="Enter ID..."
+                android:id="@+id/button"
+                android:onClick="EnterID"
+                android:layout_below="@+id/scanButton"
+                android:layout_alignLeft="@+id/scanButton"
+                android:layout_alignStart="@+id/scanButton" />
+
+            <FrameLayout
+                android:layout_width="186dp"
+                android:layout_height="128dp"
+                android:id="@+id/cameraPreview"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"></FrameLayout>
+
+            <ImageButton
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:id="@+id/profileBtn"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/ClueBoxRelative"
+                android:layout_alignEnd="@+id/ClueBoxRelative"
+                android:src="@drawable/dude"
+                android:scaleType="fitEnd"
+                android:onClick="SetProfile" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="64dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/treeline_s"
+        android:scaleType="centerCrop"
+        android:alpha="0.5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-15dp" />
+
+</RelativeLayout>
+<!-- From: file:/D:/SummerScavenge/Summer%20Scavenge%20%5BBeta%5D/src/main/res/layout/activity_main.xml -->
