@@ -66,8 +66,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58536583" vertical-offset="1970" max-vertical-offset="2533">
-              <caret line="341" column="0" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29512194" vertical-offset="1970" max-vertical-offset="2533">
+              <caret line="277" column="65" selection-start-line="277" selection-start-column="65" selection-end-line="277" selection-end-column="65" />
               <folding>
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#Refresh#0;class#MainActivity#0" expanded="false" />
@@ -1987,8 +1987,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58536583" vertical-offset="1970" max-vertical-offset="2533">
-          <caret line="341" column="0" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.29512194" vertical-offset="1970" max-vertical-offset="2533">
+          <caret line="277" column="65" selection-start-line="277" selection-start-column="65" selection-end-line="277" selection-end-column="65" />
           <folding>
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#Refresh#0;class#MainActivity#0" expanded="false" />
