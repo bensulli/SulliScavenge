@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SulliScavenge.iml" filepath="$PROJECT_DIR$/SulliScavenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/Summer Scavenge [Beta]/Summer Scavenge [Beta].iml" filepath="$PROJECT_DIR$/Summer Scavenge [Beta]/Summer Scavenge [Beta].iml" />
       <module fileurl="file://$PROJECT_DIR$/SummerScavenge.iml" filepath="$PROJECT_DIR$/SummerScavenge.iml" />
     </modules>

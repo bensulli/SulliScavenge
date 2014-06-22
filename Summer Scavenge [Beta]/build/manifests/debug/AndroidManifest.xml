@@ -1,4 +1,4 @@
-<!-- From: file:/D:/SummerScavenge/Summer%20Scavenge%20%5BBeta%5D/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="ca.sulli.summerscavenge">
+<!-- From: file:/P:/Projects/SulliScavenge/Summer%20Scavenge%20%5BBeta%5D/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="ca.sulli.summerscavenge">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19"/>
 
     <uses-permission android:name="android.permission.CAMERA"/>

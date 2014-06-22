@@ -2,13 +2,13 @@
 <merger>
 
     <dataSet config="19.1.0" >
-        <source path="D:\SummerScavenge\Summer Scavenge [Beta]\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\assets" />
+        <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\assets" />
     </dataSet>
     <dataSet config="main" >
-        <source path="D:\SummerScavenge\Summer Scavenge [Beta]\src\main\assets" />
+        <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\src\main\assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="D:\SummerScavenge\Summer Scavenge [Beta]\src\debug\assets" />
+        <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\src\debug\assets" />
     </dataSet>
 
 </merger>
