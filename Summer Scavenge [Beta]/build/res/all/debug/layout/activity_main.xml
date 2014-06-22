@@ -38,15 +38,15 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:text="Team Name"
-                        android:id="@+id/textView" />
+                        android:id="@+id/txtTeamName" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Team Score: "
-                        android:id="@+id/textView2"
-                        android:layout_below="@+id/textView"
+                        android:id="@+id/txtTeamScore"
+                        android:layout_below="@+id/txtTeamName"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true" />
 
@@ -55,15 +55,15 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Your Score: "
-                        android:id="@+id/textView3"
-                        android:layout_below="@+id/textView2" />
+                        android:id="@+id/txtYourScore"
+                        android:layout_below="@+id/txtTeamScore" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Top Team (18)"
-                        android:id="@+id/textView5"
+                        android:id="@+id/txtTopTeam"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true" />
 
@@ -72,8 +72,8 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:text="Team Name"
-                        android:id="@+id/textView4"
-                        android:layout_below="@+id/textView5"
+                        android:id="@+id/txtTopTeamName"
+                        android:layout_below="@+id/txtTopTeam"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true" />
 
@@ -109,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Your Clues..."
+                    android:text="Your Assigned Clues..."
                     android:id="@+id/textView6"
 
                     android:layout_alignParentLeft="true"

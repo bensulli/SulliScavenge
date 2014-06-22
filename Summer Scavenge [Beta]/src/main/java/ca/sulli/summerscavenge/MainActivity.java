@@ -42,16 +42,26 @@ import java.util.Random;
 
 public class MainActivity extends ActionBarActivity {
 
+    FrameLayout preview;
+    TextView clue1Number;
+    TextView clue2Number;
+    TextView clue3Number;
+    TextView txtTeamName;
+    TextView txtTeamScore;
+    TextView txtYourScore;
+    TextView txtTopTeam;
+    TextView txtTopTeamName;
+
+    ImageButton scanButton;
+
+    String name;
+    String teamName;
+
     private Camera mCamera;
     private CameraPreview mPreview;
     private Handler autoFocusHandler;
 
     ImageScanner scanner;
-    FrameLayout preview;
-
-    TextView clue1Number;
-    TextView clue2Number;
-    TextView clue3Number;
 
     static int clueMax = 3;
     Clue[] assignedClues = new Clue[3];
@@ -61,10 +71,7 @@ public class MainActivity extends ActionBarActivity {
     private boolean barcodeScanned = false;
     private boolean previewing = false;
 
-    ImageButton scanButton;
-
     private String resultString = "";
-
 
     static {
         System.loadLibrary("iconv");
@@ -75,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
     //TODO: Randomly assign clues at first launch
 
 
-    // ************ CREATE TEMPORARY BETA CODES ************
+// ************ CREATE TEMPORARY BETA CODES ************
 
     Clue[] betaClueSet = {
             new Clue(1,60660775,"This is the clue for #1."),
@@ -92,9 +99,7 @@ public class MainActivity extends ActionBarActivity {
             new Clue(12,31632278,"This is the clue for #12.")
     };
 
-
-
-    // ****************************************************
+// ****************************************************
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +127,11 @@ public class MainActivity extends ActionBarActivity {
         clue1Number = (TextView)findViewById(R.id.clue1NumText);
         clue2Number = (TextView)findViewById(R.id.clue2NumText);
         clue3Number = (TextView)findViewById(R.id.clue3NumText);
+        txtTeamName = (TextView)findViewById(R.id.txtTeamName);
+        txtTeamScore = (TextView)findViewById(R.id.txtTeamScore);
+        txtYourScore = (TextView)findViewById(R.id.txtYourScore);
+        txtTopTeam = (TextView)findViewById(R.id.txtTopTeam);
+        txtTopTeamName = (TextView)findViewById(R.id.txtTopTeamName);
 
 
         scanButton.setOnClickListener(new OnClickListener() {
@@ -144,37 +154,21 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-        int randomPick;
-        int count = 0;
-
         // Get initial clues
-        while(CluesAssigned() < 3)
-        {
-            randomPick = randInt(0,11);
-            if(betaClueSet[randomPick].picked == false)
-            {
-                assignedClues[count] = betaClueSet[randomPick];
-                count++;
-            }
-        }
-
-        Refresh();
-
-
-
+        AssignClues();
 
 
         //TODO: Get game state at launch
 
+        SetProfile(getWindow().getDecorView().getRootView());
+        Refresh();
+
+
     }
 
-    public void Refresh()
-    {
-        clue1Number.setText(Integer.toString(assignedClues[0].id));
-        clue2Number.setText(Integer.toString(assignedClues[1].id));
-        clue3Number.setText(Integer.toString(assignedClues[2].id));
-    }
 
+
+// ****************** CLUE MANAGEMENT ******************
 
     public int CluesAssigned()
     {
@@ -201,7 +195,8 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public static int randInt(int min, int max) {
+    public static int randInt(int min, int max)
+    {
 
         // Usually this should be a field rather than a method variable so
         // that it is not re-seeded every call.
@@ -214,10 +209,56 @@ public class MainActivity extends ActionBarActivity {
         return randomNum;
     }
 
-    public void onPause() {
+    public void AssignClues()
+    {
+        int randomPick;
+        int count = 0;
+
+        while(CluesAssigned() < 3) {
+            randomPick = randInt(0, 11);
+            if (betaClueSet[randomPick].picked == false) {
+                assignedClues[count] = betaClueSet[randomPick];
+                betaClueSet[randomPick].picked = true;
+                count++;
+            }
+        }
+    }
+
+// *******************
+
+
+
+// ****************** UI REFRESH ******************
+
+    public void Refresh()
+    {
+        clue1Number.setText("#" + Integer.toString(assignedClues[0].id));
+        clue2Number.setText("#" + Integer.toString(assignedClues[1].id));
+        clue3Number.setText("#" + Integer.toString(assignedClues[2].id));
+
+        txtTeamName.setText(teamName);
+        //txtTeamScore.setText(teamScore);
+        //txtYourScore.setText(yourScore);
+        //txtTopTeam.setText(topTeamScore);
+        //txtTopTeamName.setText(topTeamName);
+
+
+    }
+// *******************
+
+
+// ****************** PLM ******************
+
+    public void onPause()
+    {
         super.onPause();
         releaseCamera();
     }
+
+// *******************
+
+
+// ****************** CAMERA ******************
 
     public static Camera getCameraInstance(){
         Camera c = null;
@@ -237,16 +278,17 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    private Runnable doAutoFocus = new Runnable() {
-        public void run() {
-            if (previewing)
-                mCamera.autoFocus(autoFocusCB);
-        }
-    };
+                private Runnable doAutoFocus = new Runnable()
+            {
+                public void run() {
+                    if (previewing)
+                        mCamera.autoFocus(autoFocusCB);
+                }
+            };
 
     PreviewCallback previewCb = new PreviewCallback() {
         public void onPreviewFrame(byte[] data, Camera camera) {
-            Camera.Parameters parameters = camera.getParameters();
+                Camera.Parameters parameters = camera.getParameters();
             Size size = parameters.getPreviewSize();
 
             Image barcode = new Image(size.width, size.height, "Y800");
@@ -273,12 +315,17 @@ public class MainActivity extends ActionBarActivity {
         }
     };
 
-    // Mimic continuous auto-focusing
+        // Mimic continuous auto-focusing
     AutoFocusCallback autoFocusCB = new AutoFocusCallback() {
         public void onAutoFocus(boolean success, Camera camera) {
             autoFocusHandler.postDelayed(doAutoFocus, 1000);
         }
     };
+
+// *******************
+
+
+// ****************** BUTTONS ******************
 
     public void ClueButtonPress(View view)
     {
@@ -298,8 +345,9 @@ public class MainActivity extends ActionBarActivity {
 //                        .setTitle("Clue!");
 
             case R.id.Clue1Gold:
-                builder.setMessage("A helpful hint for where to find the next code!")
-                        .setTitle("Clue!");
+                builder.setMessage(assignedClues[0].mediumClue)
+                        .setTitle("Clue" + String.valueOf(assignedClues[0].id) + "!");
+                break;
 
 
 //            case R.id.Clue2Bronze:
@@ -311,8 +359,9 @@ public class MainActivity extends ActionBarActivity {
 //                        .setTitle("Clue!");
 
             case R.id.Clue2Gold:
-                builder.setMessage("A helpful hint for where to find the next code!")
-                        .setTitle("Clue!");
+                builder.setMessage(assignedClues[1].mediumClue)
+                        .setTitle("Clue" + String.valueOf(assignedClues[1].id) + "!");
+                break;
 
 
 //            case R.id.Clue3Bronze:
@@ -324,10 +373,10 @@ public class MainActivity extends ActionBarActivity {
 //                        .setTitle("Clue!");
 
             case R.id.Clue3Gold:
-                builder.setMessage("A helpful hint for where to find the next code!")
-                        .setTitle("Clue!");
+                builder.setMessage(assignedClues[2].mediumClue)
+                        .setTitle("Clue" + String.valueOf(assignedClues[2].id) + "!");
+                break;
         }
-
 
         builder.setPositiveButton("Got it!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -338,7 +387,6 @@ public class MainActivity extends ActionBarActivity {
         AlertDialog clueDialogue = builder.create();
         clueDialogue.show();
     }
-
 
     public void EnterID(View view)
     {
@@ -369,6 +417,58 @@ public class MainActivity extends ActionBarActivity {
         enterID.show();
 
     }
+
+    public void SetProfile(View view)
+    {
+        final AlertDialog.Builder enterName = new AlertDialog.Builder(this);
+        enterName.setTitle("Name");
+        enterName.setMessage("Enter your name...");
+
+        final EditText inputName = new EditText(this);
+        enterName.setView(inputName);
+
+        enterName.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String value = inputName.getText().toString();
+                //TODO: Submit this value to server
+                if(value != "")
+                {
+                    name = value;
+                }
+                else
+                {
+                    enterName.show();
+                }
+                Refresh();
+            }
+        });
+
+        final AlertDialog.Builder enterTeam = new AlertDialog.Builder(this);
+        enterTeam.setTitle("Team");
+        enterTeam.setMessage("Enter your team name...");
+
+        final EditText inputTeam = new EditText(this);
+        enterTeam.setView(inputTeam);
+
+        enterTeam.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String value = inputTeam.getText().toString();
+                //TODO: Submit this value to server
+                teamName = value;
+                Refresh();
+            }
+        });
+        enterTeam.show();
+        enterName.show();
+
+    }
+
+// *******************
+
+
+// ****************** INTERFACE STUB ******************
 
     public void PostCode(int code)
     {
@@ -406,10 +506,6 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-
-    public void SetProfile()
-    {
-        //TODO: Pop up profile setter
-    }
+// *******************
 
 }
