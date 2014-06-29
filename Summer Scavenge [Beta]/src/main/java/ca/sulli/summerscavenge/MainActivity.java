@@ -1,35 +1,25 @@
 package ca.sulli.summerscavenge;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.InputType;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.app.Activity;
 import android.content.pm.ActivityInfo;
-import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.Button;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.hardware.Camera.AutoFocusCallback;
-import android.hardware.Camera.Parameters;
 import android.hardware.Camera.Size;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.graphics.ImageFormat;
 import android.widget.Toast;
 
 import net.sourceforge.zbar.ImageScanner;
@@ -39,13 +29,14 @@ import net.sourceforge.zbar.SymbolSet;
 import net.sourceforge.zbar.Config;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.StreamCorruptedException;
 import java.util.Random;
-
-import java.io.Serializable;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -89,9 +80,6 @@ public class MainActivity extends ActionBarActivity {
         System.loadLibrary("iconv");
     }
 
-    //TODO: Save gamestate to local file
-    //TODO: Populate clues for beta
-    //TODO: Randomly assign clues at first launch
 
 
 
@@ -154,7 +142,7 @@ public class MainActivity extends ActionBarActivity {
         saveStateFile = new File(getApplicationContext().getFilesDir(), saveFileName);
         if(saveStateFile.exists())
         {
-            // Load File Contents
+            LoadState();
             firstRun = false;
         }
         else
@@ -169,7 +157,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-        //TODO: Get game state at launch
+        //TODO: Get game state at launch from network
 
         if(firstRun) {
             SetProfile(getWindow().getDecorView().getRootView());
@@ -268,6 +256,7 @@ public class MainActivity extends ActionBarActivity {
     {
         super.onPause();
         releaseCamera();
+        SaveState();
     }
 
 // *******************
@@ -405,7 +394,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void EnterID(View view)
     {
-        //TODO Enter ID popup!!!
         AlertDialog.Builder enterID = new AlertDialog.Builder(this);
         enterID.setTitle("Enter found code!");
         enterID.setMessage("Submit the 8-digit code you found...");
@@ -418,7 +406,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String value = input.toString();
-                //TODO: Submit this value to server
+                //TODO: Submit code ID value to server for verification
             }
         });
 
@@ -446,7 +434,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String value = inputName.getText().toString();
-                //TODO: Submit this value to server
+                //TODO: Submit the name value to server
                 if(value != "")
                 {
                     gameState.name = value;
@@ -470,7 +458,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String value = inputTeam.getText().toString();
-                //TODO: Submit this value to server
+                //TODO: Submit the team name value to server
                 gameState.teamName = value;
                 Refresh();
             }
@@ -490,7 +478,7 @@ public class MainActivity extends ActionBarActivity {
 
         int serverResult = 0;
 
-        //TODO: Ensure the found code is an int and matches the game's format (6 numbers)
+        //TODO: Ensure the found code is an int and matches the game's format (8 numbers)
 
         codeValid = true;
 
@@ -532,16 +520,34 @@ public class MainActivity extends ActionBarActivity {
             out.writeObject(gameState);
             out.close();
             outputStream.close();
-        } catch (Exception e) {
+        }      catch (StreamCorruptedException e) {
             e.printStackTrace();
-            Log.e(null, e.toString());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }
 
     public void LoadState()
     {
+        ObjectInputStream input;
 
+        try {
+            input = new ObjectInputStream(new FileInputStream(saveStateFile));
+            gameState = (GameState) input.readObject();
+            input.close();
+        }
+     catch (StreamCorruptedException e) {
+        e.printStackTrace();
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
     }
 
 

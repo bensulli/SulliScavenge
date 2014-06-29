@@ -30,7 +30,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: ca.sulli.summerscavenge" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7029ac82-edfe-460d-8216-dc6931a4c0f0" name="Default" comment="">
+    <list default="true" id="7029ac82-edfe-460d-8216-dc6931a4c0f0" name="Default" comment="Committing from Android Studio">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java" afterPath="$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Summer Scavenge [Beta].iws" />
@@ -53,14 +54,14 @@
     <favorites_list name="Summer Scavenge [Beta]" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.492629">
       <split-first>
         <leaf>
           <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.88601035" vertical-offset="6678" max-vertical-offset="8602">
-                  <caret line="467" column="0" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.61025643" vertical-offset="306" max-vertical-offset="8704">
+                  <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#CluesAssigned#0;class#MainActivity#0" expanded="false" />
@@ -76,7 +77,7 @@
           <file leaf-file-name="GameState.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/GameState.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2533784" vertical-offset="3" max-vertical-offset="646">
+                <state vertical-scroll-proportion="0.25585285" vertical-offset="0" max-vertical-offset="646">
                   <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
                   <folding />
                 </state>
@@ -1701,7 +1702,11 @@
       <created>1404007570038</created>
       <updated>1404007570038</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Committing from Android Studio">
+      <created>1404007579391</created>
+      <updated>1404007579391</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1726,7 +1731,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1735,15 +1740,15 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32747254" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34120172" sideWeight="0.5953125" order="3" side_tool="false" content_ui="tabs" x="552" y="509" width="263" height="206" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33476394" sideWeight="0.32083333" order="7" side_tool="true" content_ui="tabs" x="299" y="260" width="1876" height="297" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" x="299" y="260" width="1876" height="297" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15565032" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33476394" sideWeight="0.6791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32832617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33476394" sideWeight="0.6791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1781,7 +1786,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java</url>
-          <line>153</line>
+          <line>141</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
@@ -2211,7 +2216,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="8976">
           <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
-            <element signature="e#3184#3185#0" expanded="true" />
+            <element signature="e#3184#3185#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2220,14 +2225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.633509" vertical-offset="28391" max-vertical-offset="29019">
           <caret line="1113" column="13" selection-start-line="1113" selection-start-column="13" selection-end-line="1113" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-20/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="85523" max-vertical-offset="89726">
-          <caret line="5234" column="0" selection-start-line="5234" selection-start-column="0" selection-end-line="5234" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2250,16 +2247,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2533784" vertical-offset="3" max-vertical-offset="646">
+        <state vertical-scroll-proportion="0.25585285" vertical-offset="0" max-vertical-offset="646">
           <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-20/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63001746" vertical-offset="85472" max-vertical-offset="89726">
+          <caret line="5241" column="25" selection-start-line="5241" selection-start-column="25" selection-end-line="5241" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88601035" vertical-offset="6678" max-vertical-offset="8602">
-          <caret line="467" column="0" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.61025643" vertical-offset="306" max-vertical-offset="8704">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#CluesAssigned#0;class#MainActivity#0" expanded="false" />
