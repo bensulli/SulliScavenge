@@ -30,7 +30,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: ca.sulli.summerscavenge" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7029ac82-edfe-460d-8216-dc6931a4c0f0" name="Default" comment="" />
+    <list default="true" id="7029ac82-edfe-460d-8216-dc6931a4c0f0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Summer Scavenge [Beta].iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,7 +59,7 @@
           <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7098446" vertical-offset="6780" max-vertical-offset="8602">
+                <state vertical-scroll-proportion="0.88601035" vertical-offset="6678" max-vertical-offset="8602">
                   <caret line="467" column="0" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -99,6 +101,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
@@ -1324,7 +1329,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -1481,7 +1486,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/jniLibs/zbar.jar" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -1688,6 +1693,11 @@
       <created>1401038128229</created>
       <updated>1401038128229</updated>
     </task>
+    <task id="LOCAL-00001" summary="Committing from Android Studio">
+      <created>1404006900838</created>
+      <updated>1404006900838</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1711,8 +1721,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1759,6 +1769,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Committing from Android Studio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committing from Android Studio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2242,7 +2254,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Summer Scavenge [Beta]/src/main/java/ca/sulli/summerscavenge/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7098446" vertical-offset="6780" max-vertical-offset="8602">
+        <state vertical-scroll-proportion="0.88601035" vertical-offset="6678" max-vertical-offset="8602">
           <caret line="467" column="0" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
