@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merger>
 
-    <dataSet config="19.1.0" >
-        <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\exploded-aar\com.android.support\appcompat-v7\19.1.0\assets" />
+    <dataSet config="21.0.0-rc1" >
+        <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\exploded-aar\com.android.support\support-v4\21.0.0-rc1\assets" />
+    </dataSet>
+    <dataSet config="21.0.0-rc1" >
+        <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\exploded-aar\com.android.support\appcompat-v7\21.0.0-rc1\assets" />
     </dataSet>
     <dataSet config="main" >
         <source path="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\src\main\assets" />

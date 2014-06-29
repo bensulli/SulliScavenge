@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/P:/Projects/SulliScavenge/Summer%20Scavenge%20%5BBeta%5D/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-v14/values.xml -->
+    <!-- From: file:/P:/Projects/SulliScavenge/Summer%20Scavenge%20%5BBeta%5D/build/exploded-aar/com.android.support/appcompat-v7/21.0.0-rc1/res/values-v14/values.xml -->
     <eat-comment />
 
     <style name="TextAppearance.AppCompat.Base.SearchResult.Subtitle" parent="@android:TextAppearance.Holo.SearchResult.Subtitle" />
@@ -38,7 +38,7 @@
 
     <style name="TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse" parent="android:TextAppearance.Holo.Widget.ActionMode.Title.Inverse" />
 
-    <style name="Theme.Base.AppCompat" parent="android:Theme.Holo">
+    <style name="Theme.Base.AppCompat" parent="Theme.Platform.AppCompat">
 
         <!-- Copy system flag values for our use -->
         <item name="windowActionBar">?android:attr/windowActionBar</item>
@@ -57,6 +57,10 @@
         <item name="listPreferredItemHeightLarge">?android:attr/listPreferredItemHeightLarge</item>
         <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
         <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
+
+        <!-- Redirecting to the platform-dependet textAppearanceListItem -->
+        <item name="textAppearanceListItem">?android:attr/textAppearanceListItem</item>
+        <item name="textAppearanceListItemSmall">?android:attr/textAppearanceListItemSmall</item>
 
         <!-- Attributes populated from the framework to be read by apps -->
         <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
@@ -65,7 +69,7 @@
 
     <style name="Theme.Base.AppCompat.DialogWhenLarge" parent="Theme.Base.AppCompat.DialogWhenLarge.Base" />
 
-    <style name="Theme.Base.AppCompat.DialogWhenLarge.Base" parent="android:Theme.Holo.DialogWhenLarge">
+    <style name="Theme.Base.AppCompat.DialogWhenLarge.Base" parent="Theme.Platform.AppCompat.DialogWhenLarge">
 
         <!-- Copy system flag values for our use -->
         <item name="windowActionBar">?android:attr/windowActionBar</item>
@@ -90,7 +94,7 @@
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
 
-    <style name="Theme.Base.AppCompat.Light" parent="android:Theme.Holo.Light">
+    <style name="Theme.Base.AppCompat.Light" parent="Theme.Platform.AppCompat.Light">
 
         <!-- Copy system flag values for our use -->
         <item name="windowActionBar">?android:attr/windowActionBar</item>
@@ -110,12 +114,16 @@
         <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
         <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
 
+        <!-- Redirecting to the platform-dependet textAppearanceListItem -->
+        <item name="textAppearanceListItem">?android:attr/textAppearanceListItem</item>
+        <item name="textAppearanceListItemSmall">?android:attr/textAppearanceListItemSmall</item>
+
         <!-- Attributes populated from the framework to be read by apps -->
         <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
 
-    <style name="Theme.Base.AppCompat.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="Theme.Base.AppCompat.Light.DarkActionBar" parent="Theme.Platform.AppCompat.Light.DarkActionBar">
 
         <!-- Copy system flag values for our use -->
         <item name="windowActionBar">?android:attr/windowActionBar</item>
@@ -135,6 +143,10 @@
         <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
         <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
 
+        <!-- Redirecting to the platform-dependet textAppearanceListItem -->
+        <item name="textAppearanceListItem">?android:attr/textAppearanceListItem</item>
+        <item name="textAppearanceListItemSmall">?android:attr/textAppearanceListItemSmall</item>
+
         <!-- Attributes populated from the framework to be read by apps -->
         <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
@@ -142,7 +154,7 @@
 
     <style name="Theme.Base.AppCompat.Light.DialogWhenLarge" parent="Theme.Base.AppCompat.Light.DialogWhenLarge.Base" />
 
-    <style name="Theme.Base.AppCompat.Light.DialogWhenLarge.Base" parent="android:Theme.Holo.Light.DialogWhenLarge">
+    <style name="Theme.Base.AppCompat.Light.DialogWhenLarge.Base" parent="Theme.Platform.AppCompat.Light.DialogWhenLarge">
 
         <!-- Copy system flag values for our use -->
         <item name="windowActionBar">?android:attr/windowActionBar</item>
@@ -166,6 +178,12 @@
         <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
+
+    <style name="Theme.Platform.AppCompat.DialogWhenLarge" parent="android:Theme.Holo.DialogWhenLarge" />
+
+    <style name="Theme.Platform.AppCompat.Light.DarkActionBar" parent="android:Theme.Holo.Light.DarkActionBar" />
+
+    <style name="Theme.Platform.AppCompat.Light.DialogWhenLarge" parent="android:Theme.Holo.Light.DialogWhenLarge" />
 
     <style name="Widget.AppCompat.Base.ActionBar" parent="android:Widget.Holo.ActionBar" />
 

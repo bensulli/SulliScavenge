@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="P:\Projects\SulliScavenge" />
-            <option value="P:\Projects\SulliScavenge\Summer Scavenge [Beta]" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Summer Scavenge [Beta]" />
           </set>
         </option>
       </GradleProjectSettings>

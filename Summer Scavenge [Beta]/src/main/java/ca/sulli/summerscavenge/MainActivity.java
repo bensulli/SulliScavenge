@@ -1,6 +1,7 @@
 package ca.sulli.summerscavenge;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
@@ -37,7 +38,14 @@ import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 import net.sourceforge.zbar.Config;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Random;
+
+import java.io.Serializable;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -54,17 +62,17 @@ public class MainActivity extends ActionBarActivity {
 
     ImageButton scanButton;
 
-    String name;
-    String teamName;
-
     private Camera mCamera;
     private CameraPreview mPreview;
     private Handler autoFocusHandler;
 
     ImageScanner scanner;
 
+    public boolean firstRun = false;
+
+
+
     static int clueMax = 3;
-    Clue[] assignedClues = new Clue[3];
 
     private boolean codeValid;
 
@@ -72,6 +80,10 @@ public class MainActivity extends ActionBarActivity {
     private boolean previewing = false;
 
     private String resultString = "";
+
+    public GameState gameState;
+    public String saveFileName = "saveState";
+    public File saveStateFile;
 
     static {
         System.loadLibrary("iconv");
@@ -82,22 +94,6 @@ public class MainActivity extends ActionBarActivity {
     //TODO: Randomly assign clues at first launch
 
 
-// ************ CREATE TEMPORARY BETA CODES ************
-
-    Clue[] betaClueSet = {
-            new Clue(1,60660775,"This is the clue for #1."),
-            new Clue(2,31858634,"This is the clue for #2."),
-            new Clue(3,51013409,"This is the clue for #3."),
-            new Clue(4,55720161,"This is the clue for #4."),
-            new Clue(5,98828642,"This is the clue for #5."),
-            new Clue(6,94046376,"This is the clue for #6."),
-            new Clue(7,27381797,"This is the clue for #7."),
-            new Clue(8,89370771,"This is the clue for #8."),
-            new Clue(9,60581440,"This is the clue for #9."),
-            new Clue(10,15206641,"This is the clue for #10."),
-            new Clue(11,67828057,"This is the clue for #11."),
-            new Clue(12,31632278,"This is the clue for #12.")
-    };
 
 // ****************************************************
 
@@ -154,15 +150,33 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-        // Get initial clues
-        AssignClues();
+        // Determine whether this is firstrun or not
+        saveStateFile = new File(getApplicationContext().getFilesDir(), saveFileName);
+        if(saveStateFile.exists())
+        {
+            // Load File Contents
+            firstRun = false;
+        }
+        else
+        {
+            try {
+                saveStateFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            gameState = new GameState();
+            firstRun = true;
+        }
 
 
         //TODO: Get game state at launch
 
-        SetProfile(getWindow().getDecorView().getRootView());
-        Refresh();
+        if(firstRun) {
+            SetProfile(getWindow().getDecorView().getRootView());
+            AssignClues();
+        }
 
+        Refresh();
 
     }
 
@@ -175,7 +189,7 @@ public class MainActivity extends ActionBarActivity {
 
         int count = 0;
 
-        for(Clue x : assignedClues)
+        for(Clue x : gameState.assignedClues)
         {
 
             try
@@ -216,9 +230,9 @@ public class MainActivity extends ActionBarActivity {
 
         while(CluesAssigned() < 3) {
             randomPick = randInt(0, 11);
-            if (betaClueSet[randomPick].picked == false) {
-                assignedClues[count] = betaClueSet[randomPick];
-                betaClueSet[randomPick].picked = true;
+            if (gameState.betaClueSet[randomPick].picked == false) {
+                gameState.assignedClues[count] = gameState.betaClueSet[randomPick];
+                gameState.betaClueSet[randomPick].picked = true;
                 count++;
             }
         }
@@ -232,16 +246,17 @@ public class MainActivity extends ActionBarActivity {
 
     public void Refresh()
     {
-        clue1Number.setText("#" + Integer.toString(assignedClues[0].id));
-        clue2Number.setText("#" + Integer.toString(assignedClues[1].id));
-        clue3Number.setText("#" + Integer.toString(assignedClues[2].id));
+        clue1Number.setText("#" + Integer.toString(gameState.assignedClues[0].id));
+        clue2Number.setText("#" + Integer.toString(gameState.assignedClues[1].id));
+        clue3Number.setText("#" + Integer.toString(gameState.assignedClues[2].id));
 
-        txtTeamName.setText(teamName);
+        txtTeamName.setText(gameState.teamName);
         //txtTeamScore.setText(teamScore);
         //txtYourScore.setText(yourScore);
         //txtTopTeam.setText(topTeamScore);
         //txtTopTeamName.setText(topTeamName);
 
+        SaveState();
 
     }
 // *******************
@@ -345,8 +360,8 @@ public class MainActivity extends ActionBarActivity {
 //                        .setTitle("Clue!");
 
             case R.id.Clue1Gold:
-                builder.setMessage(assignedClues[0].mediumClue)
-                        .setTitle("Clue" + String.valueOf(assignedClues[0].id) + "!");
+                builder.setMessage(gameState.assignedClues[0].mediumClue)
+                        .setTitle("Clue" + String.valueOf(gameState.assignedClues[0].id) + "!");
                 break;
 
 
@@ -359,8 +374,8 @@ public class MainActivity extends ActionBarActivity {
 //                        .setTitle("Clue!");
 
             case R.id.Clue2Gold:
-                builder.setMessage(assignedClues[1].mediumClue)
-                        .setTitle("Clue" + String.valueOf(assignedClues[1].id) + "!");
+                builder.setMessage(gameState.assignedClues[1].mediumClue)
+                        .setTitle("Clue" + String.valueOf(gameState.assignedClues[1].id) + "!");
                 break;
 
 
@@ -373,8 +388,8 @@ public class MainActivity extends ActionBarActivity {
 //                        .setTitle("Clue!");
 
             case R.id.Clue3Gold:
-                builder.setMessage(assignedClues[2].mediumClue)
-                        .setTitle("Clue" + String.valueOf(assignedClues[2].id) + "!");
+                builder.setMessage(gameState.assignedClues[2].mediumClue)
+                        .setTitle("Clue" + String.valueOf(gameState.assignedClues[2].id) + "!");
                 break;
         }
 
@@ -434,7 +449,7 @@ public class MainActivity extends ActionBarActivity {
                 //TODO: Submit this value to server
                 if(value != "")
                 {
-                    name = value;
+                    gameState.name = value;
                 }
                 else
                 {
@@ -456,7 +471,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(DialogInterface dialog, int which) {
                 String value = inputTeam.getText().toString();
                 //TODO: Submit this value to server
-                teamName = value;
+                gameState.teamName = value;
                 Refresh();
             }
         });
@@ -507,5 +522,27 @@ public class MainActivity extends ActionBarActivity {
     }
 
 // *******************
+
+
+    public void SaveState()
+    {
+        try {
+            FileOutputStream outputStream = new FileOutputStream(saveStateFile);
+            ObjectOutputStream out = new ObjectOutputStream(outputStream);
+            out.writeObject(gameState);
+            out.close();
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e(null, e.toString());
+        }
+
+    }
+
+    public void LoadState()
+    {
+
+    }
+
 
 }

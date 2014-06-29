@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\intermediates\pre-dexed\debug\zbar-d7083d273e0f4aeaea86d69d290bc8507546bfc4.jar"
+        jar="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\src\main\jniLibs\zbar.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e"/>
+    <item
+        dex="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\intermediates\pre-dexed\debug\classes-796fe6bad2af3f649998b8f4f196378620e0c7da.jar"
+        jar="P:\Projects\SulliScavenge\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-50869410fb814b23de92364239487c195b243502.jar"
+        jar="C:\Users\Sullivan\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-c1a555a45debc6269a78eac3c89146cd11124dfa.jar"
+        jar="P:\Projects\SulliScavenge\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="P:\Projects\SulliScavenge\Summer Scavenge [Beta]\build\intermediates\pre-dexed\debug\classes-6dd3c4045c151960dcd046f5e7e63d282a6e3594.jar"
+        jar="P:\Projects\SulliScavenge\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+
+</pre-dex-items>

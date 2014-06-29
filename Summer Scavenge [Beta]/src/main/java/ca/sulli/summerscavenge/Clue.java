@@ -1,9 +1,11 @@
 package ca.sulli.summerscavenge;
 
+import java.io.Serializable;
+
 /**
  * Created by Sullivan on 3/23/2014.
  */
-public class Clue {
+public class Clue implements Serializable {
 
     public int id;
     public int locationID;
