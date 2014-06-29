@@ -1697,7 +1697,11 @@
       <created>1404006900838</created>
       <updated>1404006900838</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Committing from Android Studio">
+      <created>1404007570038</created>
+      <updated>1404007570038</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
