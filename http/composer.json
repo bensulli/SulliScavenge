@@ -6,6 +6,7 @@
         "symfony/yaml": "2.*"
     },
     "autoload": {
-        "psr-0": {"": "Entities/"}
+        "psr-0": {"": "Entities/"},
+        "psr-4": {"": "Entities/"}
     }
 }
