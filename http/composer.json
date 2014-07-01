@@ -1,0 +1,7 @@
+{
+    "require": {
+        "doctrine/dbal": "2.5.*@dev",
+        "doctrine/orm": "2.5.*@dev",
+        "jms/serializer": "0.15.*@dev"
+    }
+}
