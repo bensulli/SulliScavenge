@@ -1,24 +1,24 @@
 <?php
-
+use Doctrine\ORM\Mapping as ORM;
 /**
- * @Entity
+ * @ORM\Entity
  */
 class Code
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     protected $event;
 
     /**
-     * @Column(type="integer")
+     * @ORM\Column(type="integer")
      */
     protected $code;
 

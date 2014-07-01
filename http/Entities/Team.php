@@ -1,45 +1,45 @@
 <?php
-
+use Doctrine\ORM\Mapping as ORM;
 /**
- * @Entity
+ * @ORM\Entity
  */
 class Team
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     protected $team_name;
 
     /**
-     * @Column(type="integer")
+     * @ORM\Column(type="integer")
      */
-    protected $total_members;
+    //protected $total_members; // Removed because counting can happen
 
     /**
-     * @Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     protected $created;
 
     /**
-     * @Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     protected $last_update;
 
     /**
-     * @Column(type="integer")
+     * @ORM\Column(type="integer")
      */
-    protected $total_codes_found;
+    //protected $total_codes_found; // Removed because counting can happen
 
     /**
      * @param mixed $id
-     * @returns Team
+     * @return Team
      */
     public function setId($id)
     {
@@ -57,7 +57,7 @@ class Team
 
     /**
      * @param mixed $team_name
-     * @returns Team
+     * @return Team
      */
     public function setTeamName($team_name)
     {
@@ -75,7 +75,7 @@ class Team
 
     /**
      * @param mixed $total_members
-     * @returns Team
+     * @return Team
      */
     public function setTotalMembers($total_members)
     {
@@ -93,7 +93,7 @@ class Team
 
     /**
      * @param mixed $created
-     * @returns Team
+     * @return Team
      */
     public function setCreated($created)
     {
@@ -111,7 +111,7 @@ class Team
 
     /**
      * @param mixed $last_update
-     * @returns Team
+     * @return Team
      */
     public function setLastUpdate($last_update)
     {
@@ -129,7 +129,7 @@ class Team
 
     /**
      * @param mixed $total_codes_found
-     * @returns Team
+     * @return Team
      */
     public function setTotalCodesFound($total_codes_found)
     {

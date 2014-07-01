@@ -1,49 +1,49 @@
 <?php
-
+use Doctrine\ORM\Mapping as ORM;
 /**
- * @Entity
+ * @ORM\Entity
  */
 class Found
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     protected $time;
 
     /**
-     * @Column(type="integer")
+     * @ORM\Column(type="integer")
      */
     protected $code_reported;
 
     /**
-     * @Column(type="boolean")
+     * @ORM\Column(type="boolean")
      */
     protected $code_valid;
 
     /**
-     * @Column(type="boolean")
+     * @ORM\Column(type="boolean")
      */
     protected $code_new;
 
     /**
-     * @ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      */
     protected $user;
 
     /**
-     * @ManyToOne(targetEntity="Team")
+     * @ORM\ManyToOne(targetEntity="Team")
      */
     protected $team;
 
     /**
-     * @Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     protected $event;
 

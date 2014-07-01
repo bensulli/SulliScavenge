@@ -1,45 +1,45 @@
 <?php
-
+use Doctrine\ORM\Mapping as ORM;
 /**
- * @Entity
+ * @ORM\Entity
  */
 class User
 {
     /**
-     * @Id
-     * @Column(type="integer")
-     * @GeneratedValue
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     protected $username;
 
     /**
-     * @ManyToOne(targetEntity="Team")
+     * @ORM\ManyToOne(targetEntity="Team")
      */
     protected $team;
 
     /**
-     * @Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     protected $created;
 
     /**
-     * @Column(type="datetime")
+     * @ORM\Column(type="datetime")
      */
     protected $last_update;
 
     /**
-     * @Column(type="integer")
+     * @ORM\Column(type="integer")
      */
     protected $codes_found;
 
     /**
      * @param mixed $id
-     * @returns User
+     * @return User
      */
     public function setId($id)
     {
@@ -57,7 +57,7 @@ class User
 
     /**
      * @param mixed $username
-     * @returns User
+     * @return User
      */
     public function setUsername($username)
     {
@@ -75,7 +75,7 @@ class User
 
     /**
      * @param mixed $team
-     * @returns User
+     * @return User
      */
     public function setTeam($team)
     {
@@ -93,7 +93,7 @@ class User
 
     /**
      * @param mixed $created
-     * @returns User
+     * @return User
      */
     public function setCreated($created)
     {
@@ -111,7 +111,7 @@ class User
 
     /**
      * @param mixed $last_update
-     * @returns User
+     * @return User
      */
     public function setLastUpdate($last_update)
     {
@@ -129,7 +129,7 @@ class User
 
     /**
      * @param mixed $codes_found
-     * @returns User
+     * @return User
      */
     public function setCodesFound($codes_found)
     {
