@@ -1,13 +1,9 @@
 <?php
 
-namespace Sulli\Scavenger\Entities;
-
-use Doctrine\Entity;
-
 /**
  * @Entity
  */
-class Found extends Entity
+class Found
 {
     /**
      * @Id
