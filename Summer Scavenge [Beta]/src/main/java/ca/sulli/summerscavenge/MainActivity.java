@@ -37,19 +37,21 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainActivity extends ActionBarActivity {
 
     FrameLayout preview;
-    TextView clue1Number;
-    TextView clue2Number;
-    TextView clue3Number;
-    TextView txtTeamName;
-    TextView txtTeamScore;
-    TextView txtYourScore;
-    TextView txtTopTeam;
-    TextView txtTopTeamName;
+    public static TextView clue1Number;
+    public static TextView clue2Number;
+    public static TextView clue3Number;
+    public static TextView txtTeamName;
+    public static TextView txtTeamScore;
+    public static TextView txtYourScore;
+    public static TextView txtTopTeam;
+    public static TextView txtTopTeamName;
 
     ImageButton scanButton;
 
@@ -61,8 +63,6 @@ public class MainActivity extends ActionBarActivity {
 
     public boolean firstRun = false;
 
-
-
     static int clueMax = 3;
 
     private boolean codeValid;
@@ -72,9 +72,15 @@ public class MainActivity extends ActionBarActivity {
 
     private String resultString = "";
 
-    public GameState gameState;
+    private Timer timer = new Timer();
+    private MyTimerTask timerTask;
+
+    public static GameState gameState;
     public String saveFileName = "saveState";
-    public File saveStateFile;
+    public static File saveStateFile;
+
+    static long refreshDelay = 15000;
+    static long refreshWait = 15000;
 
     static {
         System.loadLibrary("iconv");
@@ -92,6 +98,11 @@ public class MainActivity extends ActionBarActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        timerTask = new MyTimerTask();
+
+        timer.schedule(timerTask,refreshDelay,refreshWait);
+
 
         autoFocusHandler = new Handler();
         mCamera = getCameraInstance();
@@ -232,7 +243,7 @@ public class MainActivity extends ActionBarActivity {
 
 // ****************** UI REFRESH ******************
 
-    public void Refresh()
+    public static void Refresh()
     {
         clue1Number.setText("#" + Integer.toString(gameState.assignedClues[0].id));
         clue2Number.setText("#" + Integer.toString(gameState.assignedClues[1].id));
@@ -460,6 +471,14 @@ public class MainActivity extends ActionBarActivity {
                 String value = inputTeam.getText().toString();
                 //TODO: Submit the team name value to server
                 gameState.teamName = value;
+                if(Interface.RegisterPlayer() < 5)
+                {
+                    Toast.makeText(getApplicationContext(), "Player registered!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Player registration failed. Yell at Ben...", Toast.LENGTH_SHORT).show();
+                }
                 Refresh();
             }
         });
@@ -512,7 +531,7 @@ public class MainActivity extends ActionBarActivity {
 // *******************
 
 
-    public void SaveState()
+    public static void SaveState()
     {
         try {
             FileOutputStream outputStream = new FileOutputStream(saveStateFile);
